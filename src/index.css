@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Unbounded:wght@200..900&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body, input, button {
+  font-size: 1.8rem;
+  font-family: "Space Mono", monospace;
+}
+
+mark {
+  color: #EF3340;
+  font-weight: 500;
+  background: black;
+  font-style: normal;
+}
+
+.center_content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.global_container {
+  height: 100%;
+}
+
+*::selection {
+  background-color: #EF3340;
+  color: white;
+}
+
