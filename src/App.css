@@ -63,3 +63,35 @@
 .center_container p {
   margin-left: 2.4rem;
 }
+
+form {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-left: 2.4rem;
+  margin-top: 2.4rem;
+  width: 50%;
+}
+
+form input,
+form textarea {
+  margin-bottom: 2.4rem;
+  padding: .5rem 1rem;
+  background: black;
+  color: lightgrey;
+  border: 0 none;
+  border-bottom: .1rem solid white;
+  width: 100%;
+}
+
+form button {
+  background: #EF3340;
+  border: 0 none;
+  padding: 1rem 3rem;
+  font-weight: 600;
+}
+
+form button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

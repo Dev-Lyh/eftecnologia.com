@@ -3,10 +3,12 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { eftecLogo } from './assets/eftec_logo'
 import TaskflowIMG from './assets/taskflow_img.png'
+import { projects } from './mocks/projects.js'
+import { ContactUs } from './components/Mailer.jsx'
 
 function App() {
   const [command, setCommand] = useState("")
-  const [step, setStep] = useState(4)
+  const [step, setStep] = useState(5)
 
   function handleKeyDown(event) {
     if (event.key === "Enter") {
@@ -101,18 +103,6 @@ function App() {
                   <mark>{"$"}</mark>
                   {" "} contact
                 </p>
-                <p
-                  style={{
-                    color:
-                    command.length > 0
-                      && "designs".includes(command)
-                      ? "white"
-                      : "grey"
-                  }}
-                >
-                  <mark>{"$"}</mark>
-                  {" "} designs
-                </p>
               </div>
               <p style={{ fontStyle: "italic" }}>Write the command and type <mark>Enter</mark> to see.</p>
             </div>
@@ -188,21 +178,26 @@ function App() {
                   ls
                   <mark className={"bullet"}>{" "}projects</mark>
                 </h2>
-                <div>
-                  <div>
-                    <p>/taskflow</p>
-                    <div style={{ marginLeft: "4.8rem" }}>
-                      <p><strong>Project Name:</strong> Taskflow</p>
-                      <p><strong>Tech Stack:</strong> ReactJS, Firebase and NodeJS</p>
-                      <p><strong>Description:</strong> Lorem Ipsum</p>
-                      <p><strong>Live Demo:</strong> <mark>[Internal Project]</mark></p>
-                      <p><strong>Repo:</strong> <mark>[Internal Project]</mark></p>
-                      <p><strong>Sreenshot:</strong> ./screenshot.png</p>
-                    </div>
-                  </div>
-                  <p>/nexus</p>
-                  <p>/mytaskboard</p>
-                  <p>/notecode</p>
+                <div style={{ overflowY: "scroll", height: "80%" }}>
+                  {
+                    projects.map((project) => (
+                      <div style={{ marginBottom: "2.8rem" }}>
+                        <p>|- {project.path}</p>
+                        <div style={{ marginLeft: "4.8rem" }}>
+                          <p><strong>Project Name:</strong> {project.name}</p>
+                          <p><strong>Tech Stack:</strong> {project.stack}</p>
+                          <p><strong>Description:</strong> {project.description}</p>
+                          <p><strong>Live Demo:</strong> <mark>{project.live_demo}</mark></p>
+                          <p><strong>Repo:</strong> <mark>{project.repo}</mark></p>
+                          {
+                            project.video.length > 0
+                            &&
+                            <p><strong>Video:</strong> {project.video}</p>
+                          }
+                        </div>
+                      </div>
+                    ))
+                  }
                 </div>
               </div>
             </div>
@@ -210,12 +205,41 @@ function App() {
         )
       case 3:
         return (
-          <div>
+          <div className={"global_container"}>
             <h1>
               <mark className={"bullet"}>{">"}</mark>
               {" "}exec{" "}
               <mark>contact</mark>
             </h1>
+            <div className={"center_content"}>
+              <div className={"center_container"}>
+                <h2>
+                  user
+                  <mark>@portfolio:~${" "}</mark>
+                  cat
+                  <mark className={"bullet"}>{" "}./mycontacts.txt</mark>
+                </h2>
+                <p>Did you like what you saw? Get in touch!</p>
+                <p><strong>Email: </strong>contact@eftecnologia.com</p>
+                <p>
+                  <strong>Linkedin: </strong>
+                  <a
+                    style={{ color: "#EF3340" }}
+                    href="https://www.linkedin.com/in/emily-carvalho-felicio/"
+                    target="_blank"
+                  >
+                    <mark>Go to my profile {">"}</mark>
+                  </a>
+                </p>
+                <p
+                  style={{
+                    marginTop: "2.4rem",
+                    fontWeight: "600"
+                  }}
+                >Or if you prefer, you can write and send your message directly here.</p>
+                <ContactUs />
+              </div>
+            </div>
           </div>
         )
       case 4:

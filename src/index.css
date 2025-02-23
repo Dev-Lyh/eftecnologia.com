@@ -10,9 +10,13 @@ html {
   font-size: 62.5%;
 }
 
-body, input, button {
+body, input, button, textarea {
   font-size: 1.8rem;
   font-family: "Space Mono", monospace;
+}
+
+textarea {
+  resize: none;
 }
 
 mark {
@@ -39,3 +43,23 @@ mark {
   color: white;
 }
 
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #ffffff #000000;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 1.6rem;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #000000;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #ffffff;
+    border: .1rem solid #ffffff;
+  }
