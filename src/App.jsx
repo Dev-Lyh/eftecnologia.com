@@ -220,7 +220,7 @@ function App() {
                   <mark className={"bullet"}>{" "}./mycontacts.txt</mark>
                 </h2>
                 <p>Did you like what you saw? Get in touch!</p>
-                <p><strong>Email: </strong>contact@eftecnologia.com</p>
+                <p><strong>Email: </strong>contato@eftecnologia.com</p>
                 <p>
                   <strong>Linkedin: </strong>
                   <a
